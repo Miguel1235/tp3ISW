@@ -55,13 +55,13 @@ class testPasswordCharacters(unittest.TestCase):
     # TU 6: La longitud del campo "Usuario" no puede ser nula, si es asi, el sistema deniega el acceso
     class testPasswordCharacters(unittest.TestCase):
         def testUserLenght(self):
-            result = User().validateUserLength()
+            result = User("user1test").validateUserLength()
             self.assertTrue(result)
     
     
     # TU 7: La cantidad de producto que se desee comprar no puede ser inferior a cero
     class testNoNegativeProductQuantity(unittest.TestCase):
         def testUserLenght(self):
-            result = Product().validateNoNegatyProductQuantity()
+            result = Product("4").validateNoNegatyProductQuantity()
             self.assertTrue(result)
     

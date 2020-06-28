@@ -32,3 +32,24 @@ class testPasswordLenght(unittest.TestCase):
     def testPasswordLenght(self):
         result = User('12345678').validateLenghtPasswordUser()
         self.assertTrue(result)
+ #TU 5: Si el usuario no ingresa números y letras en su contraseña no será una contraseña válida
+class testPasswordCharacters(unittest.TestCase):
+    def testPasswordCharacters(self):
+        result = User('12345678').validateCharactersPasswordUser()
+        self.assertTrue(result)
+        
+        class testPasswordCharacters(unittest.TestCase):
+    def testPasswordCharacters(self):
+        result = User('12345678').validateCharactersPasswordUser()
+        self.assertTrue(result)
+        
+       class testdiscount(unittest.TestCase):
+    def testdiscount(self):
+        result = Carro('12','')
+        Carro.setTotal(100)
+        Carro.setDesc(50)
+        Carro.validateTotalGreaterThanDesc()
+        self.assertTrue(result)
+    def validateTotalGreaterThanDesc(self):
+        
+    

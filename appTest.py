@@ -38,7 +38,7 @@ class testPasswordCharacters(unittest.TestCase):
         result = User('12345678').validateCharactersPasswordUser()
         self.assertTrue(result)
         
-        class testPasswordCharacters(unittest.TestCase):
+        class testPasswordCharacters(unittest.TestCase):  #Esto esta repetido??
     def testPasswordCharacters(self):
         result = User('12345678').validateCharactersPasswordUser()
         self.assertTrue(result)
@@ -52,4 +52,16 @@ class testPasswordCharacters(unittest.TestCase):
         self.assertTrue(result)
     def validateTotalGreaterThanDesc(self):
         
+    # TU 6: La longitud del campo "Usuario" no puede ser nula, si es asi, el sistema deniega el acceso
+    class testPasswordCharacters(unittest.TestCase):
+        def testUserLenght(self):
+            result = User().validateUserLength()
+            self.assertTrue(result)
+    
+    
+    # TU 7: La cantidad de producto que se desee comprar no puede ser inferior a cero
+    class testNoNegativeProductQuantity(unittest.TestCase):
+        def testUserLenght(self):
+            result = Product().validateNoNegatyProductQuantity()
+            self.assertTrue(result)
     

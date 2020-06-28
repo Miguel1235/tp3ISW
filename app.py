@@ -22,7 +22,47 @@ class User:
             return True
         else:
             return False
+        
+    def validateCharacterPasswordUser(self.passwordUser):
+    
+for character in passwordUser:
+ if character.isdigit():
+        
+            return True
+    else:
+            return False
+        
+class Carro:
+    def __init__(self, carroid, description):
+        self.carroid = carroid
+        self.description = description
 
+    def setTotal(self, total):
+            if total < 0:
+            raise ValueError('The total must be greater than 0')
+        self.total = total
+        self.total = total
+
+    def getTotal(self):
+        return self.Total
+     def getDesc(self):
+        return self.desc
+
+    def setDesc(self, Desc):
+        if desc < 0:
+            raise ValueError('The desc must be greater than 0')
+        self.desc = Desc
+
+    def getPrice(self):
+        return self.price
+    def validateDescription(self):
+    if(len(self.description)):
+            return True
+    else:
+            return False
+    def validateTotalGreaterThanDesc(self):
+    return self.total > self.desc
+    
 class Product:
     def __init__(self, name, description):
         self.name = name

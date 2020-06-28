@@ -25,12 +25,17 @@ class User:
         
     def validateCharacterPasswordUser(self.passwordUser):
     
-for character in passwordUser:
- if character.isdigit():
-        
-            return True
-    else:
+        for character in passwordUser:
+            if character.isdigit():
+                return True
+            else:
+                return False
+            
+    def  validateUserLength (String):
+        if(Len(String)==0):
             return False
+        else:
+            return True
         
 class Carro:
     def __init__(self, carroid, description):
@@ -87,6 +92,12 @@ class Product:
             return True
         else:
             return False
+        
+   def validateNoNegatyProductQuantity(number):
+        if(number < 0):
+            return False
+        else:
+            reutrn True
 
 
 class CreditCard:

@@ -1,6 +1,10 @@
 from datetime import date
+<<<<<<< HEAD
 import re
 
+=======
+ import re
+>>>>>>> 426cb93f6b61d39493d5b5d097da505cf8978971
 
 class User:
     def __init__(self, nameUser, passwordUser):

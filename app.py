@@ -5,6 +5,9 @@ class User:
         self.nameUser = nameUser
         self.passwordUser = passwordUser
     
+    def __len__(self):
+        return len(self.passwordUser)
+    
     def setNameUser(self, nameUser):
         self.nameUser = nameUser
     
@@ -17,22 +20,21 @@ class User:
     def getPasswordUser(self):
         return self.passwordUser
     
-    def validateLenghtPasswordUser(self.passwordUser):
-        if (len(self.passwordUser) >= 8):
+    def validateLenghtPasswordUser(password):
+        if (len(password) >= 8):
             return True
         else:
             return False
         
-    def validateCharacterPasswordUser(self.passwordUser):
-    
+    def validateCharacterPasswordUser(passwordUser):
         for character in passwordUser:
             if character.isdigit():
                 return True
             else:
                 return False
             
-    def  validateUserLength (String):
-        if(Len(String)==0):
+    def  validateUserLength (nameUser):
+        if (len(nameUser)==0):
             return False
         else:
             return True
@@ -43,14 +45,14 @@ class Carro:
         self.description = description
 
     def setTotal(self, total):
-            if total < 0:
+        if total < 0:
             raise ValueError('The total must be greater than 0')
         self.total = total
         self.total = total
 
     def getTotal(self):
         return self.Total
-     def getDesc(self):
+    def getDesc(self):
         return self.desc
 
     def setDesc(self, Desc):
@@ -60,13 +62,15 @@ class Carro:
 
     def getPrice(self):
         return self.price
+
     def validateDescription(self):
-    if(len(self.description)):
+        if(len(self.description)):
             return True
-    else:
+        else:
             return False
+
     def validateTotalGreaterThanDesc(self):
-    return self.total > self.desc
+        return self.total > self.desc
     
 class Product:
     def __init__(self, name, description):
@@ -93,11 +97,11 @@ class Product:
         else:
             return False
         
-   def validateNoNegatyProductQuantity(number):
+    def validateNoNegatyProductQuantity(number):
         if(number < 0):
             return False
         else:
-            reutrn True
+            return True
 
 
 class CreditCard:
@@ -114,8 +118,6 @@ class CreditCard:
     def validateCreditCardGreaterThan0(self):
         return self.number > 0
 
-    def validateCreditCardOnlyNumber(self.number):
-        if type(self.number) == int:
-            return True
-        else:
-            return False
+    def validateCreditCardOnlyNumber(self):
+        return isinstance(self.number, int)
+

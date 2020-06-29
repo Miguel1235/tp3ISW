@@ -55,10 +55,10 @@ class Carro:
     def getDesc(self):
         return self.desc
 
-    def setDesc(self, Desc):
+    def setDesc(self, desc):
         if desc < 0:
             raise ValueError('The desc must be greater than 0')
-        self.desc = Desc
+        self.desc = desc
 
     def getPrice(self):
         return self.price
@@ -97,8 +97,8 @@ class Product:
         else:
             return False
         
-    def validateNoNegatyProductQuantity(number):
-        if(number < 0):
+    def validateNoNegatyProductQuantity(self):
+        if(self.stock < 0):
             return False
         else:
             return True

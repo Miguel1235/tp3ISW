@@ -1,4 +1,5 @@
 from datetime import date
+ import re
 
 class User:
     def __init__(self,nameUser,passwordUser):
@@ -26,9 +27,8 @@ class User:
         else:
             return False
         
-    def validatePasswordUser(passwordUser):
-        for character in passwordUser:
-            if character.isdigit():
+    def validatePasswordUser(passwordUser):        
+if re.match("^[A-Za-z0-9_-]*$", passwordUser):        
                 return True
             else:
                 return False

@@ -39,7 +39,12 @@ class User:
             return False
         else:
             return True
-
+    
+    def validateNameUserLength(self):
+        if (len(self.nameUser) > 20):
+            return False
+        else:
+            return True
 
 class Chart:
     def __init__(self, chartId, description):
@@ -100,6 +105,12 @@ class Product:
 
     def validateNoNegativeProductQuantity(self):
         if(self.stock < 0):
+            return False
+        else:
+            return True
+    
+    def validateNoNegativePrice(self):
+        if(self.price < 0):
             return False
         else:
             return True

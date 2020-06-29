@@ -67,7 +67,7 @@ class testUser(unittest.TestCase):
         self.assertTrue(result)
     
     # TU 10: En nombre del usuario no debe ser mayor a 20 caracteres 
-    def testNameUserLength(self):
+    def testNameUserLength(self)  :
         result = User('Fulanito', 'superPassword').validateNameUserLength()
         self.assertTrue(result)
 

@@ -26,7 +26,7 @@ class User:
         else:
             return False
         
-    def validateCharacterPasswordUser(passwordUser):
+    def validatePasswordUser(passwordUser):
         for character in passwordUser:
             if character.isdigit():
                 return True
@@ -39,9 +39,9 @@ class User:
         else:
             return True
         
-class Carro:
-    def __init__(self, carroid, description):
-        self.carroid = carroid
+class Chart:
+    def __init__(self, chartid, description):
+        self.chartid = chartid
         self.description = description
 
     def setTotal(self, total):

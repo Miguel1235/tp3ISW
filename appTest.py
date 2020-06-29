@@ -1,5 +1,5 @@
 import unittest
-from app import Product, CreditCard, User, Carro
+from app import Product, CreditCard, User, Chart
 
 
 # TU 1: Todo producto que se encuentre en la base de datos tendrá que tener un nombre y una descripción, es decir que si por ejemplo tenemos en la base de datos un celular de tal marca, este deberá tener una descripción acorde.
@@ -41,10 +41,10 @@ class testPasswordCharacters(unittest.TestCase):
         
 class testdiscount(unittest.TestCase):
     def testdiscount(self):
-        result = Carro('12','')
-        Carro.setTotal(Carro,100)
-        Carro.setDesc(Carro,50)
-        Carro.validateTotalGreaterThanDesc(Carro)
+        result = Chart('12','')
+        Chart.setTotal(Chart,100)
+        Chart.setDesc(Chart,50)
+        Chart.validateTotalGreaterThanDesc(Chart)
         self.assertTrue(result)
 
         

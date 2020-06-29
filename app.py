@@ -1,67 +1,67 @@
 from datetime import date
+import re
+
 
 class User:
-    def __init__(self,nameUser,passwordUser):
+    def __init__(self, nameUser, passwordUser):
         self.nameUser = nameUser
         self.passwordUser = passwordUser
-    
+
     def __len__(self):
         return len(self.passwordUser)
-    
+
     def setNameUser(self, nameUser):
         self.nameUser = nameUser
-    
+
     def getNameUser(self):
         return self.nameUser
 
     def setPasswordUser(self, passwordUser):
         self.passwordUser = passwordUser
-    
+
     def getPasswordUser(self):
         return self.passwordUser
-    
-    def validateLenghtPasswordUser(password):
-        if (len(password) >= 8):
+
+    def validateLengthPasswordUser(self):
+        if (len(self.passwordUser) >= 8):
             return True
         else:
             return False
-        
-    def validatePasswordUser(passwordUser):
-        for character in passwordUser:
-            if character.isdigit():
-                return True
-            else:
-                return False
-            
-    def  validateUserLength (nameUser):
-        if (len(nameUser)==0):
+
+    def validatePasswordUser(self):
+        if re.match("^[A-Za-z0-9]*$", self.passwordUser):
+            return True
+        else:
+            return False
+
+    def validateUserLength(self):
+        if (len(self.nameUser) == 0):
             return False
         else:
             return True
-        
+
+
 class Chart:
-    def __init__(self, chartid, description):
-        self.chartid = chartid
+    def __init__(self, chartId, description):
+        self.chartId = chartId
         self.description = description
+        self.discount = 0
 
     def setTotal(self, total):
         if total < 0:
             raise ValueError('The total must be greater than 0')
         self.total = total
-        self.total = total
 
     def getTotal(self):
-        return self.Total
+        return self.total
+
     def getDesc(self):
-        return self.desc
+        return self.discount
 
-    def setDesc(self, desc):
-        if desc < 0:
-            raise ValueError('The desc must be greater than 0')
-        self.desc = desc
-
-    def getPrice(self):
-        return self.price
+    def setDesc(self, discount):
+        if discount < 0:
+            raise ValueError('The discount must be greater than 0')
+        self.discount = discount
 
     def validateDescription(self):
         if(len(self.description)):
@@ -69,9 +69,10 @@ class Chart:
         else:
             return False
 
-    def validateTotalGreaterThanDesc(self):
-        return self.total > self.desc
-    
+    def validateTotalGreaterThanDiscount(self):
+        return self.total > self.discount
+
+
 class Product:
     def __init__(self, name, description):
         self.name = name
@@ -96,8 +97,8 @@ class Product:
             return True
         else:
             return False
-        
-    def validateNoNegatyProductQuantity(self):
+
+    def validateNoNegativeProductQuantity(self):
         if(self.stock < 0):
             return False
         else:
@@ -120,4 +121,3 @@ class CreditCard:
 
     def validateCreditCardOnlyNumber(self):
         return isinstance(self.number, int)
-

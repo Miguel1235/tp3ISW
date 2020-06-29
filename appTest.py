@@ -34,18 +34,12 @@ class testPasswordLenght(unittest.TestCase):
         self.assertTrue(result)
 
 #  #TU 5: Si el usuario no ingresa números y letras en su contraseña no será una contraseña válida
-# class testPasswordCharacters(unittest.TestCase):
-#     def testPasswordCharacters(self):
-#         result = User('12345678').validateCharactersPasswordUser()
-#         self.assertTrue(result)
+class testPasswordUser(unittest.TestCase):
+     def testPasswordUser(self):
+         result = User('12345678').validatePasswordUser()
+         self.assertTrue(result)
         
-# class testdiscount(unittest.TestCase):
-#     def testdiscount(self):
-#         result = Carro('12','')
-#         Carro.setTotal(100)
-#         Carro.setDesc(50)
-#         Carro.validateTotalGreaterThanDesc()
-#         self.assertTrue(result)
+
 
         
 # # TU 6: La longitud del campo "Usuario" no puede ser nula, si es asi, el sistema deniega el acceso
@@ -61,3 +55,11 @@ class testPasswordLenght(unittest.TestCase):
 #         result = Product("4").validateNoNegatyProductQuantity()
 #         self.assertTrue(result)
     
+#TU 8 :Al aplicar un descuento al carrito, el precio del mismo no resultará nunca en negativo.
+ class testdiscount(unittest.TestCase):
+     def testdiscount(self):
+         result = Carro('12','')
+         Carro.setTotal(100)
+         Carro.setDesc(50)
+         Carro.validateTotalGreaterThanDesc()
+         self.assertTrue(result)
